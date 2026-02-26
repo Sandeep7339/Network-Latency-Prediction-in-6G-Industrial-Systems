@@ -1,4 +1,4 @@
-# TD-6GMF-INDSEC
+# NETWORK LATENCY PREDICTION IN 6G INDUSTRIAL SYSTEMS
 
 End-to-end ML pipeline for predicting latency and SLA violations in a simulated 6G industrial network.
 
@@ -89,17 +89,4 @@ CN_project/
 
 > R² ≈ 0 and AUC ≈ 0.5 are expected — the synthetic data has no exploitable signal. The pipeline is production-ready for real 6G data.
 
-## Data Files
 
-Place these CSVs in `data/`:
-
-- `Network_Traffic.csv` (200k rows)
-- `Time_Deterministic_Stats.csv` (200k rows)
-- `Security_Events.csv` (50k rows)
-- `Enforcement_Actions.csv` (50k rows)
-- `Stabilization_Controller.csv` (200k rows)
-- `Device_Profile.csv` (1k rows)
-
-## LaTeX Report
-
-`final_report.tex` is an Overleaf-ready report. Upload it with the `figures/` folder and compile with **pdfLaTeX**.
