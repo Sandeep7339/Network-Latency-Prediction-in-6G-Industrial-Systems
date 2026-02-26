@@ -1,0 +1,28 @@
+{
+  "xgb_regression": {
+    "max_depth": 3,
+    "learning_rate": 0.1,
+    "subsample": 0.9,
+    "colsample_bytree": 0.7,
+    "reg_alpha": 0.0,
+    "reg_lambda": 1.0
+  },
+  "xgb_classification": {
+    "max_depth": 9,
+    "learning_rate": 0.05,
+    "subsample": 0.9,
+    "colsample_bytree": 0.7,
+    "reg_alpha": 0.1,
+    "reg_lambda": 1.0
+  },
+  "lstm_regression": {
+    "hidden_dim": 128,
+    "learning_rate": 0.005,
+    "dropout": 0.1
+  },
+  "lstm_classification": {
+    "hidden_dim": 128,
+    "learning_rate": 0.001,
+    "dropout": 0.1
+  }
+}

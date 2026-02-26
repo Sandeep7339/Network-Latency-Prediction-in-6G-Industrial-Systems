@@ -1,0 +1,283 @@
+{
+  "Network_Traffic": {
+    "rows": 200000,
+    "columns": 11,
+    "column_details": {
+      "timestamp_ns": {
+        "dtype": "datetime64[ns, UTC]",
+        "missing": 0,
+        "non_null": 200000
+      },
+      "src_device_id": {
+        "dtype": "int64",
+        "missing": 0,
+        "non_null": 200000
+      },
+      "dst_device_id": {
+        "dtype": "int64",
+        "missing": 0,
+        "non_null": 200000
+      },
+      "traffic_type": {
+        "dtype": "object",
+        "missing": 0,
+        "non_null": 200000
+      },
+      "packet_size_bytes": {
+        "dtype": "int64",
+        "missing": 0,
+        "non_null": 200000
+      },
+      "flow_priority": {
+        "dtype": "int64",
+        "missing": 0,
+        "non_null": 200000
+      },
+      "scheduled_slot": {
+        "dtype": "int64",
+        "missing": 0,
+        "non_null": 200000
+      },
+      "protocol": {
+        "dtype": "object",
+        "missing": 0,
+        "non_null": 200000
+      },
+      "latency_us": {
+        "dtype": "float64",
+        "missing": 0,
+        "non_null": 200000
+      },
+      "jitter_us": {
+        "dtype": "float64",
+        "missing": 0,
+        "non_null": 200000
+      },
+      "packet_loss": {
+        "dtype": "int64",
+        "missing": 0,
+        "non_null": 200000
+      }
+    }
+  },
+  "Device_Profile": {
+    "rows": 1000,
+    "columns": 10,
+    "column_details": {
+      "device_id": {
+        "dtype": "int64",
+        "missing": 0,
+        "non_null": 1000
+      },
+      "device_type": {
+        "dtype": "object",
+        "missing": 0,
+        "non_null": 1000
+      },
+      "vendor": {
+        "dtype": "object",
+        "missing": 0,
+        "non_null": 1000
+      },
+      "firmware_version": {
+        "dtype": "object",
+        "missing": 0,
+        "non_null": 1000
+      },
+      "cpu_usage": {
+        "dtype": "float64",
+        "missing": 0,
+        "non_null": 1000
+      },
+      "memory_usage": {
+        "dtype": "float64",
+        "missing": 0,
+        "non_null": 1000
+      },
+      "battery_level": {
+        "dtype": "float64",
+        "missing": 0,
+        "non_null": 1000
+      },
+      "mobility_state": {
+        "dtype": "object",
+        "missing": 0,
+        "non_null": 1000
+      },
+      "trust_score": {
+        "dtype": "float64",
+        "missing": 0,
+        "non_null": 1000
+      },
+      "operational_state": {
+        "dtype": "object",
+        "missing": 0,
+        "non_null": 1000
+      }
+    }
+  },
+  "Time_Deterministic_Stats": {
+    "rows": 200000,
+    "columns": 7,
+    "column_details": {
+      "flow_id": {
+        "dtype": "int64",
+        "missing": 0,
+        "non_null": 200000
+      },
+      "cycle_time_us": {
+        "dtype": "int64",
+        "missing": 0,
+        "non_null": 200000
+      },
+      "deadline_us": {
+        "dtype": "int64",
+        "missing": 0,
+        "non_null": 200000
+      },
+      "latency_violation": {
+        "dtype": "boolean",
+        "missing": 0,
+        "non_null": 200000
+      },
+      "jitter_violation": {
+        "dtype": "boolean",
+        "missing": 0,
+        "non_null": 200000
+      },
+      "synchronization_error_ns": {
+        "dtype": "float64",
+        "missing": 0,
+        "non_null": 200000
+      },
+      "queue_delay_us": {
+        "dtype": "float64",
+        "missing": 0,
+        "non_null": 200000
+      }
+    }
+  },
+  "Security_Events": {
+    "rows": 50000,
+    "columns": 8,
+    "column_details": {
+      "event_id": {
+        "dtype": "int64",
+        "missing": 0,
+        "non_null": 50000
+      },
+      "timestamp_ns": {
+        "dtype": "datetime64[ns, UTC]",
+        "missing": 0,
+        "non_null": 50000
+      },
+      "device_id": {
+        "dtype": "int64",
+        "missing": 0,
+        "non_null": 50000
+      },
+      "attack_type": {
+        "dtype": "object",
+        "missing": 0,
+        "non_null": 50000
+      },
+      "traffic_deviation": {
+        "dtype": "float64",
+        "missing": 0,
+        "non_null": 50000
+      },
+      "behavior_anomaly_score": {
+        "dtype": "float64",
+        "missing": 0,
+        "non_null": 50000
+      },
+      "anomaly_label": {
+        "dtype": "boolean",
+        "missing": 0,
+        "non_null": 50000
+      },
+      "severity_level": {
+        "dtype": "object",
+        "missing": 0,
+        "non_null": 50000
+      }
+    }
+  },
+  "Enforcement_Actions": {
+    "rows": 50000,
+    "columns": 7,
+    "column_details": {
+      "action_id": {
+        "dtype": "int64",
+        "missing": 0,
+        "non_null": 50000
+      },
+      "event_id": {
+        "dtype": "int64",
+        "missing": 0,
+        "non_null": 50000
+      },
+      "action_type": {
+        "dtype": "object",
+        "missing": 0,
+        "non_null": 50000
+      },
+      "execution_slot": {
+        "dtype": "int64",
+        "missing": 0,
+        "non_null": 50000
+      },
+      "enforcement_latency_us": {
+        "dtype": "float64",
+        "missing": 0,
+        "non_null": 50000
+      },
+      "success_flag": {
+        "dtype": "boolean",
+        "missing": 0,
+        "non_null": 50000
+      },
+      "affected_flows": {
+        "dtype": "int64",
+        "missing": 0,
+        "non_null": 50000
+      }
+    }
+  },
+  "Stabilization_Controller": {
+    "rows": 200000,
+    "columns": 6,
+    "column_details": {
+      "controller_state": {
+        "dtype": "object",
+        "missing": 0,
+        "non_null": 200000
+      },
+      "queue_occupancy": {
+        "dtype": "float64",
+        "missing": 0,
+        "non_null": 200000
+      },
+      "rerouted_flows": {
+        "dtype": "int64",
+        "missing": 0,
+        "non_null": 200000
+      },
+      "scheduling_adjustment": {
+        "dtype": "int64",
+        "missing": 0,
+        "non_null": 200000
+      },
+      "latency_restored": {
+        "dtype": "int64",
+        "missing": 0,
+        "non_null": 200000
+      },
+      "control_action_delay_us": {
+        "dtype": "float64",
+        "missing": 0,
+        "non_null": 200000
+      }
+    }
+  }
+}

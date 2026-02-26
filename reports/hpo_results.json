@@ -1,0 +1,673 @@
+{
+  "xgb_regression": {
+    "task": "regression",
+    "target": "latency_us",
+    "metric": "mae",
+    "n_splits": 4,
+    "n_configs": 12,
+    "best_params": {
+      "max_depth": 3,
+      "learning_rate": 0.1,
+      "subsample": 0.9,
+      "colsample_bytree": 0.7,
+      "reg_alpha": 0.0,
+      "reg_lambda": 1.0
+    },
+    "best_score": 11.952073,
+    "all_results": [
+      {
+        "params": {
+          "max_depth": 3,
+          "learning_rate": 0.1,
+          "subsample": 0.9,
+          "colsample_bytree": 0.7,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0
+        },
+        "fold_scores": [
+          11.830374,
+          11.782611,
+          12.154466,
+          12.040841
+        ],
+        "mean_score": 11.952073,
+        "std_score": 0.151963
+      },
+      {
+        "params": {
+          "max_depth": 3,
+          "learning_rate": 0.01,
+          "subsample": 0.7,
+          "colsample_bytree": 1.0,
+          "reg_alpha": 0.1,
+          "reg_lambda": 1.0
+        },
+        "fold_scores": [
+          11.830257,
+          11.780943,
+          12.159954,
+          12.037545
+        ],
+        "mean_score": 11.952175,
+        "std_score": 0.153822
+      },
+      {
+        "params": {
+          "max_depth": 9,
+          "learning_rate": 0.01,
+          "subsample": 0.7,
+          "colsample_bytree": 0.7,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0
+        },
+        "fold_scores": [
+          11.825245,
+          11.779449,
+          12.159749,
+          12.044616
+        ],
+        "mean_score": 11.952265,
+        "std_score": 0.156187
+      },
+      {
+        "params": {
+          "max_depth": 9,
+          "learning_rate": 0.01,
+          "subsample": 0.7,
+          "colsample_bytree": 0.7,
+          "reg_alpha": 0.1,
+          "reg_lambda": 1.0
+        },
+        "fold_scores": [
+          11.825501,
+          11.77972,
+          12.159445,
+          12.044569
+        ],
+        "mean_score": 11.952309,
+        "std_score": 0.155952
+      },
+      {
+        "params": {
+          "max_depth": 9,
+          "learning_rate": 0.01,
+          "subsample": 0.9,
+          "colsample_bytree": 1.0,
+          "reg_alpha": 0.1,
+          "reg_lambda": 1.0
+        },
+        "fold_scores": [
+          11.829244,
+          11.782052,
+          12.156903,
+          12.043716
+        ],
+        "mean_score": 11.952979,
+        "std_score": 0.153578
+      },
+      {
+        "params": {
+          "max_depth": 6,
+          "learning_rate": 0.05,
+          "subsample": 0.9,
+          "colsample_bytree": 1.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0
+        },
+        "fold_scores": [
+          11.831245,
+          11.783127,
+          12.156242,
+          12.041475
+        ],
+        "mean_score": 11.953022,
+        "std_score": 0.152329
+      },
+      {
+        "params": {
+          "max_depth": 6,
+          "learning_rate": 0.01,
+          "subsample": 0.9,
+          "colsample_bytree": 1.0,
+          "reg_alpha": 0.1,
+          "reg_lambda": 5.0
+        },
+        "fold_scores": [
+          11.830936,
+          11.781538,
+          12.159839,
+          12.042906
+        ],
+        "mean_score": 11.953805,
+        "std_score": 0.154242
+      },
+      {
+        "params": {
+          "max_depth": 6,
+          "learning_rate": 0.05,
+          "subsample": 0.9,
+          "colsample_bytree": 0.7,
+          "reg_alpha": 0.1,
+          "reg_lambda": 1.0
+        },
+        "fold_scores": [
+          11.8321,
+          11.78139,
+          12.160337,
+          12.04251
+        ],
+        "mean_score": 11.954084,
+        "std_score": 0.154161
+      },
+      {
+        "params": {
+          "max_depth": 6,
+          "learning_rate": 0.05,
+          "subsample": 0.7,
+          "colsample_bytree": 1.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0
+        },
+        "fold_scores": [
+          11.829822,
+          11.783816,
+          12.160431,
+          12.043623
+        ],
+        "mean_score": 11.954423,
+        "std_score": 0.154133
+      },
+      {
+        "params": {
+          "max_depth": 6,
+          "learning_rate": 0.1,
+          "subsample": 0.9,
+          "colsample_bytree": 0.7,
+          "reg_alpha": 0.1,
+          "reg_lambda": 1.0
+        },
+        "fold_scores": [
+          11.848045,
+          11.783117,
+          12.159085,
+          12.041333
+        ],
+        "mean_score": 11.957895,
+        "std_score": 0.150045
+      },
+      {
+        "params": {
+          "max_depth": 9,
+          "learning_rate": 0.05,
+          "subsample": 0.9,
+          "colsample_bytree": 0.7,
+          "reg_alpha": 0.1,
+          "reg_lambda": 1.0
+        },
+        "fold_scores": [
+          11.840814,
+          11.78399,
+          12.16098,
+          12.046246
+        ],
+        "mean_score": 11.958008,
+        "std_score": 0.15248
+      },
+      {
+        "params": {
+          "max_depth": 9,
+          "learning_rate": 0.1,
+          "subsample": 0.7,
+          "colsample_bytree": 1.0,
+          "reg_alpha": 0.1,
+          "reg_lambda": 5.0
+        },
+        "fold_scores": [
+          11.837937,
+          11.793981,
+          12.169743,
+          12.052088
+        ],
+        "mean_score": 11.963437,
+        "std_score": 0.154019
+      }
+    ]
+  },
+  "xgb_classification": {
+    "task": "classification",
+    "target": "latency_violation",
+    "metric": "logloss",
+    "n_splits": 4,
+    "n_configs": 12,
+    "best_params": {
+      "max_depth": 9,
+      "learning_rate": 0.05,
+      "subsample": 0.9,
+      "colsample_bytree": 0.7,
+      "reg_alpha": 0.1,
+      "reg_lambda": 1.0
+    },
+    "best_score": 0.326055,
+    "all_results": [
+      {
+        "params": {
+          "max_depth": 9,
+          "learning_rate": 0.05,
+          "subsample": 0.9,
+          "colsample_bytree": 0.7,
+          "reg_alpha": 0.1,
+          "reg_lambda": 1.0
+        },
+        "fold_scores": [
+          0.328419,
+          0.301531,
+          0.337667,
+          0.336604
+        ],
+        "mean_score": 0.326055,
+        "std_score": 0.014604
+      },
+      {
+        "params": {
+          "max_depth": 9,
+          "learning_rate": 0.1,
+          "subsample": 0.7,
+          "colsample_bytree": 1.0,
+          "reg_alpha": 0.1,
+          "reg_lambda": 5.0
+        },
+        "fold_scores": [
+          0.332211,
+          0.309156,
+          0.338854,
+          0.349242
+        ],
+        "mean_score": 0.332366,
+        "std_score": 0.014711
+      },
+      {
+        "params": {
+          "max_depth": 6,
+          "learning_rate": 0.05,
+          "subsample": 0.9,
+          "colsample_bytree": 1.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0
+        },
+        "fold_scores": [
+          0.35118,
+          0.31611,
+          0.360331,
+          0.364874
+        ],
+        "mean_score": 0.348124,
+        "std_score": 0.01913
+      },
+      {
+        "params": {
+          "max_depth": 6,
+          "learning_rate": 0.05,
+          "subsample": 0.7,
+          "colsample_bytree": 1.0,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0
+        },
+        "fold_scores": [
+          0.346077,
+          0.319536,
+          0.36078,
+          0.37884
+        ],
+        "mean_score": 0.351308,
+        "std_score": 0.021706
+      },
+      {
+        "params": {
+          "max_depth": 6,
+          "learning_rate": 0.05,
+          "subsample": 0.9,
+          "colsample_bytree": 0.7,
+          "reg_alpha": 0.1,
+          "reg_lambda": 1.0
+        },
+        "fold_scores": [
+          0.357163,
+          0.314703,
+          0.363635,
+          0.375596
+        ],
+        "mean_score": 0.352774,
+        "std_score": 0.022953
+      },
+      {
+        "params": {
+          "max_depth": 6,
+          "learning_rate": 0.1,
+          "subsample": 0.9,
+          "colsample_bytree": 0.7,
+          "reg_alpha": 0.1,
+          "reg_lambda": 1.0
+        },
+        "fold_scores": [
+          0.354128,
+          0.321736,
+          0.362101,
+          0.374386
+        ],
+        "mean_score": 0.353088,
+        "std_score": 0.019486
+      },
+      {
+        "params": {
+          "max_depth": 9,
+          "learning_rate": 0.01,
+          "subsample": 0.7,
+          "colsample_bytree": 0.7,
+          "reg_alpha": 0.1,
+          "reg_lambda": 1.0
+        },
+        "fold_scores": [
+          0.33975,
+          0.338506,
+          0.407475,
+          0.428975
+        ],
+        "mean_score": 0.378676,
+        "std_score": 0.040275
+      },
+      {
+        "params": {
+          "max_depth": 9,
+          "learning_rate": 0.01,
+          "subsample": 0.7,
+          "colsample_bytree": 0.7,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0
+        },
+        "fold_scores": [
+          0.339928,
+          0.340348,
+          0.414319,
+          0.432052
+        ],
+        "mean_score": 0.381662,
+        "std_score": 0.041994
+      },
+      {
+        "params": {
+          "max_depth": 9,
+          "learning_rate": 0.01,
+          "subsample": 0.9,
+          "colsample_bytree": 1.0,
+          "reg_alpha": 0.1,
+          "reg_lambda": 1.0
+        },
+        "fold_scores": [
+          0.343461,
+          0.340584,
+          0.422116,
+          0.433848
+        ],
+        "mean_score": 0.385002,
+        "std_score": 0.043191
+      },
+      {
+        "params": {
+          "max_depth": 6,
+          "learning_rate": 0.01,
+          "subsample": 0.9,
+          "colsample_bytree": 1.0,
+          "reg_alpha": 0.1,
+          "reg_lambda": 5.0
+        },
+        "fold_scores": [
+          0.469197,
+          0.471677,
+          0.569824,
+          0.608375
+        ],
+        "mean_score": 0.529768,
+        "std_score": 0.060883
+      },
+      {
+        "params": {
+          "max_depth": 3,
+          "learning_rate": 0.1,
+          "subsample": 0.9,
+          "colsample_bytree": 0.7,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0
+        },
+        "fold_scores": [
+          0.542136,
+          0.366789,
+          0.588903,
+          0.692575
+        ],
+        "mean_score": 0.547601,
+        "std_score": 0.117735
+      },
+      {
+        "params": {
+          "max_depth": 3,
+          "learning_rate": 0.01,
+          "subsample": 0.7,
+          "colsample_bytree": 1.0,
+          "reg_alpha": 0.1,
+          "reg_lambda": 1.0
+        },
+        "fold_scores": [
+          0.627041,
+          0.583935,
+          0.64967,
+          0.691606
+        ],
+        "mean_score": 0.638063,
+        "std_score": 0.0389
+      }
+    ]
+  },
+  "lstm_regression": {
+    "task": "regression",
+    "target": "latency_us",
+    "metric": "mse_loss",
+    "n_splits": 3,
+    "n_configs": 6,
+    "seq_len": 30,
+    "epochs_per_trial": 10,
+    "best_params": {
+      "hidden_dim": 128,
+      "learning_rate": 0.005,
+      "dropout": 0.1
+    },
+    "best_score": 223.78303,
+    "all_results": [
+      {
+        "params": {
+          "hidden_dim": 128,
+          "learning_rate": 0.005,
+          "dropout": 0.1
+        },
+        "fold_scores": [
+          220.670637,
+          223.735026,
+          226.943426
+        ],
+        "mean_score": 223.78303,
+        "std_score": 2.56108
+      },
+      {
+        "params": {
+          "hidden_dim": 128,
+          "learning_rate": 0.003,
+          "dropout": 0.3
+        },
+        "fold_scores": [
+          220.691861,
+          223.736767,
+          226.952913
+        ],
+        "mean_score": 223.793847,
+        "std_score": 2.556382
+      },
+      {
+        "params": {
+          "hidden_dim": 128,
+          "learning_rate": 0.005,
+          "dropout": 0.1
+        },
+        "fold_scores": [
+          220.715539,
+          223.727121,
+          227.039081
+        ],
+        "mean_score": 223.827247,
+        "std_score": 2.582546
+      },
+      {
+        "params": {
+          "hidden_dim": 128,
+          "learning_rate": 0.003,
+          "dropout": 0.1
+        },
+        "fold_scores": [
+          220.917096,
+          223.729449,
+          226.925652
+        ],
+        "mean_score": 223.857399,
+        "std_score": 2.454651
+      },
+      {
+        "params": {
+          "hidden_dim": 128,
+          "learning_rate": 0.001,
+          "dropout": 0.1
+        },
+        "fold_scores": [
+          2789.158936,
+          309.413372,
+          227.002911
+        ],
+        "mean_score": 1108.525073,
+        "std_score": 1188.863745
+      },
+      {
+        "params": {
+          "hidden_dim": 32,
+          "learning_rate": 0.003,
+          "dropout": 0.2
+        },
+        "fold_scores": [
+          4388.093348,
+          1138.582284,
+          227.401362
+        ],
+        "mean_score": 1918.025665,
+        "std_score": 1785.774984
+      }
+    ]
+  },
+  "lstm_classification": {
+    "task": "classification",
+    "target": "latency_violation",
+    "metric": "bce_loss",
+    "n_splits": 3,
+    "n_configs": 6,
+    "seq_len": 30,
+    "epochs_per_trial": 10,
+    "best_params": {
+      "hidden_dim": 128,
+      "learning_rate": 0.001,
+      "dropout": 0.1
+    },
+    "best_score": 0.298211,
+    "all_results": [
+      {
+        "params": {
+          "hidden_dim": 128,
+          "learning_rate": 0.001,
+          "dropout": 0.1
+        },
+        "fold_scores": [
+          0.286077,
+          0.301515,
+          0.307041
+        ],
+        "mean_score": 0.298211,
+        "std_score": 0.008872
+      },
+      {
+        "params": {
+          "hidden_dim": 128,
+          "learning_rate": 0.003,
+          "dropout": 0.1
+        },
+        "fold_scores": [
+          0.286039,
+          0.301447,
+          0.30727
+        ],
+        "mean_score": 0.298252,
+        "std_score": 0.008957
+      },
+      {
+        "params": {
+          "hidden_dim": 32,
+          "learning_rate": 0.003,
+          "dropout": 0.2
+        },
+        "fold_scores": [
+          0.286042,
+          0.301468,
+          0.307258
+        ],
+        "mean_score": 0.298256,
+        "std_score": 0.008954
+      },
+      {
+        "params": {
+          "hidden_dim": 128,
+          "learning_rate": 0.005,
+          "dropout": 0.1
+        },
+        "fold_scores": [
+          0.286539,
+          0.301363,
+          0.307002
+        ],
+        "mean_score": 0.298301,
+        "std_score": 0.00863
+      },
+      {
+        "params": {
+          "hidden_dim": 128,
+          "learning_rate": 0.003,
+          "dropout": 0.3
+        },
+        "fold_scores": [
+          0.286078,
+          0.301704,
+          0.307192
+        ],
+        "mean_score": 0.298325,
+        "std_score": 0.008945
+      },
+      {
+        "params": {
+          "hidden_dim": 128,
+          "learning_rate": 0.005,
+          "dropout": 0.1
+        },
+        "fold_scores": [
+          0.286107,
+          0.302565,
+          0.307436
+        ],
+        "mean_score": 0.298703,
+        "std_score": 0.009126
+      }
+    ]
+  },
+  "elapsed_seconds": 2654.6
+}

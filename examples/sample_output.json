@@ -1,0 +1,22 @@
+{
+  "predictions": [
+    {
+      "flow_index": 0,
+      "predicted_latency_us": 100.1365,
+      "violation_probability": 0.091929,
+      "violation_flag": false
+    },
+    {
+      "flow_index": 1,
+      "predicted_latency_us": 100.3743,
+      "violation_probability": 0.093485,
+      "violation_flag": false
+    },
+    {
+      "flow_index": 2,
+      "predicted_latency_us": 101.1139,
+      "violation_probability": 0.092528,
+      "violation_flag": false
+    }
+  ]
+}
