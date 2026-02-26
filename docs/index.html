@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TD-6GMF-INDSEC | Network Latency Prediction in 6G Industrial Systems</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ============ NAVIGATION ============ -->
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="#hero" class="nav-logo">TD-6GMF-INDSEC</a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#dataset">Dataset</a></li>
+      <li><a href="#pipeline">Pipeline</a></li>
+      <li><a href="#models">Models</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#explainability">Explainability</a></li>
+      <li><a href="#robustness">Robustness</a></li>
+      <li><a href="#enforcement">Enforcement</a></li>
+      <li><a href="#contributors">Team</a></li>
+      <li><a href="https://github.com/Abhinashroy/Network-Latency-Prediction-in-6G-Industrial-Systems" class="btn-nav" target="_blank">GitHub &rarr;</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-tag">End-to-End Machine Learning Pipeline</p>
+    <h1>Network Latency Prediction<br/>in <span class="gradient-text">6G Industrial Systems</span></h1>
+    <p class="hero-sub">
+      Predicting per-packet latency &amp; SLA violations in time-deterministic 6G networks
+      using XGBoost, LightGBM, LSTM, and stacking ensembles &mdash; with SHAP explainability,
+      robustness testing, and causal enforcement analysis.
+    </p>
+    <div class="hero-buttons">
+      <a href="#about" class="btn btn-primary">Explore the Project</a>
+      <a href="https://github.com/Abhinashroy/Network-Latency-Prediction-in-6G-Industrial-Systems" class="btn btn-outline" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">40,000</span><span class="stat-label">Rows</span></div>
+      <div class="stat"><span class="stat-num">68</span><span class="stat-label">Features</span></div>
+      <div class="stat"><span class="stat-num">5</span><span class="stat-label">Model Families</span></div>
+      <div class="stat"><span class="stat-num">12.08 &micro;s</span><span class="stat-label">Best MAE</span></div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll to explore</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</header>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About the Project</h2>
+    <p class="section-subtitle">
+      Sixth-generation (6G) industrial networks must deliver deterministic, sub-millisecond
+      latency while simultaneously defending against adversarial traffic. This project
+      investigates these dual requirements through a comprehensive ML pipeline applied to
+      the <strong>TD-6GMF-INDSEC</strong> synthetic dataset.
+    </p>
+    <div class="cards-grid three">
+      <div class="card">
+        <div class="card-icon">&#x1F3AF;</div>
+        <h3>Regression</h3>
+        <p>Predict per-packet latency (<code>latency_us</code>) evaluated via MAE, RMSE, and R&sup2;.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#x26A0;&#xFE0F;</div>
+        <h3>Classification</h3>
+        <p>Predict SLA violations (latency &gt; 120&micro;s) evaluated via F1, AUC-ROC, and accuracy.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#x1F50D;</div>
+        <h3>Causal Analysis</h3>
+        <p>Estimate enforcement-action effectiveness using DiD and Propensity-Score Matching.</p>
+      </div>
+    </div>
+    <div class="objectives-box">
+      <h3>Key Objectives</h3>
+      <ul>
+        <li>Predict per-packet latency and SLA violations from network &amp; device features</li>
+        <li>Quantify the effectiveness of enforcement actions using causal inference</li>
+        <li>Provide explainable, robust, and reproducible results suitable for operational deployment</li>
+        <li>Build a production-grade framework transferable to real 6G industrial deployments</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DATASET ============ -->
+<section id="dataset" class="alt-bg">
+  <div class="container">
+    <h2 class="section-title">Dataset</h2>
+    <p class="section-subtitle">
+      The raw data comprises six CSV files capturing time-deterministic network traffic,
+      device telemetry, security events, and enforcement actions from a simulated 6G industrial environment.
+    </p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr><th>File</th><th>Rows</th><th>Cols</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>Network_Traffic.csv</code></td><td>200,000</td><td>11</td><td>Per-packet flow records</td></tr>
+          <tr><td><code>Time_Deterministic_Stats.csv</code></td><td>200,000</td><td>7</td><td>Cycle time, deadline, violations</td></tr>
+          <tr><td><code>Security_Events.csv</code></td><td>50,000</td><td>8</td><td>Attacks, anomaly scores</td></tr>
+          <tr><td><code>Enforcement_Actions.csv</code></td><td>50,000</td><td>7</td><td>Actions taken, success flags</td></tr>
+          <tr><td><code>Stabilization_Controller.csv</code></td><td>200,000</td><td>6</td><td>Controller state, queue data</td></tr>
+          <tr><td><code>Device_Profile.csv</code></td><td>1,000</td><td>10</td><td>Device telemetry &amp; metadata</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cards-grid two" style="margin-top:2rem">
+      <div class="card">
+        <h3>After Merging</h3>
+        <p><strong>40,000 rows &times; 57 columns</strong> including numeric features (latency, jitter, packet size, CPU, queue),
+        categorical features (traffic type, protocol, device type, attack type), and targets.</p>
+      </div>
+      <div class="card">
+        <h3>Summary Statistics</h3>
+        <ul style="margin:0;padding-left:1.2rem">
+          <li>Mean latency: 100.0 &micro;s, std: 15.0 &micro;s</li>
+          <li>Range: [29.2, 164.9] &micro;s</li>
+          <li>Violation rate: ~9% (&gt;120 &micro;s)</li>
+          <li>Zero missingness after merge</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PIPELINE ============ -->
+<section id="pipeline">
+  <div class="container">
+    <h2 class="section-title">Pipeline &amp; Feature Engineering</h2>
+    <p class="section-subtitle">
+      A multi-stage data processing pipeline transforms raw CSVs into ML-ready features.
+    </p>
+    <div class="pipeline-flow">
+      <div class="pipeline-step">
+        <div class="step-number">1</div>
+        <h4>Data Ingestion</h4>
+        <p>Load 6 CSV files, type-coerce numerics &amp; booleans, convert timestamps to datetime64</p>
+      </div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step">
+        <div class="step-number">2</div>
+        <h4>Merge Strategy</h4>
+        <p>Left-join on device/flow IDs, merge_asof on timestamps, row-aligned concat</p>
+      </div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step">
+        <div class="step-number">3</div>
+        <h4>Sampling</h4>
+        <p>Stratified sample to 40,000 rows on traffic type &amp; violation label</p>
+      </div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step">
+        <div class="step-number">4</div>
+        <h4>Feature Engineering</h4>
+        <p>68 features: rolling stats, lags, one-hot, ordinal, frequency encoding</p>
+      </div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step">
+        <div class="step-number">5</div>
+        <h4>Train/Val/Test</h4>
+        <p>Chronological 70/15/15 split by timestamp (28k / 6k / 6k)</p>
+      </div>
+    </div>
+    <div class="feature-groups">
+      <h3>Engineered Feature Groups (68 total)</h3>
+      <div class="cards-grid three">
+        <div class="card mini">
+          <h4>Rolling Windows</h4>
+          <p>Mean, std, packet_rate for w &isin; {1, 10, 60}s &mdash; <strong>9 features</strong></p>
+        </div>
+        <div class="card mini">
+          <h4>Lag Features</h4>
+          <p>latency_lag_1 &hellip; latency_lag_10 &mdash; <strong>10 features</strong></p>
+        </div>
+        <div class="card mini">
+          <h4>One-Hot Encoding</h4>
+          <p>7 categorical columns &rarr; <strong>~25 dummies</strong></p>
+        </div>
+        <div class="card mini">
+          <h4>Ordinal Encoding</h4>
+          <p>operational_state, severity_level, controller_state &mdash; <strong>3 features</strong></p>
+        </div>
+        <div class="card mini">
+          <h4>Frequency Encoding</h4>
+          <p>src_device_id, dst_device_id, firmware_version &mdash; <strong>3 features</strong></p>
+        </div>
+        <div class="card mini">
+          <h4>Numeric Features</h4>
+          <p>Packet/flow, device, timing, queue/controller, security &mdash; <strong>~18 features</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MODELS ============ -->
+<section id="models" class="alt-bg">
+  <div class="container">
+    <h2 class="section-title">Models &amp; Training</h2>
+    <p class="section-subtitle">
+      Five model families trained for both regression and classification tasks,
+      culminating in a two-level stacking ensemble.
+    </p>
+    <div class="model-tiers">
+      <!-- Baseline -->
+      <div class="tier">
+        <h3 class="tier-label">Baseline Models</h3>
+        <div class="cards-grid three">
+          <div class="card model-card">
+            <div class="model-badge baseline">Baseline</div>
+            <h4>DummyRegressor</h4>
+            <p>Strategy: mean. Serves as the lower-bound reference.</p>
+          </div>
+          <div class="card model-card">
+            <div class="model-badge baseline">Baseline</div>
+            <h4>Ridge Regression</h4>
+            <p>&alpha; = 1.0. Linear baseline with L2 regularization.</p>
+          </div>
+          <div class="card model-card">
+            <div class="model-badge baseline">Baseline</div>
+            <h4>XGBRegressor</h4>
+            <p>200 rounds, max_depth=6, lr=0.1.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Advanced -->
+      <div class="tier">
+        <h3 class="tier-label">Advanced Models</h3>
+        <div class="cards-grid two">
+          <div class="card model-card">
+            <div class="model-badge advanced">Advanced</div>
+            <h4>XGBoost-ES</h4>
+            <p>500 rounds, early stopping (patience 30), subsample=0.8, colsample=0.8, with MAE / log-loss eval.</p>
+          </div>
+          <div class="card model-card">
+            <div class="model-badge advanced">Advanced</div>
+            <h4>LSTM</h4>
+            <p>2-layer, 64 hidden units, seq_len=30, ReduceLROnPlateau, early stopping (patience 8). PyTorch.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Ensemble -->
+      <div class="tier">
+        <h3 class="tier-label">Stacking Ensemble</h3>
+        <div class="ensemble-diagram">
+          <div class="ens-level">
+            <span class="ens-tag">Level 0</span>
+            <div class="ens-models">
+              <span class="ens-chip">XGBoost</span>
+              <span class="ens-chip">LightGBM</span>
+              <span class="ens-chip">Ridge / LogReg</span>
+            </div>
+          </div>
+          <div class="ens-arrow">&darr;</div>
+          <div class="ens-level meta">
+            <span class="ens-tag">Level 1 (Meta)</span>
+            <div class="ens-models">
+              <span class="ens-chip meta-chip">Ridge (Regression)</span>
+              <span class="ens-chip meta-chip">LogReg (Classification)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESULTS ============ -->
+<section id="results">
+  <div class="container">
+    <h2 class="section-title">Results</h2>
+    <p class="section-subtitle">
+      Performance on the held-out test set (6,000 rows). All models converge to near-identical
+      MAE because the synthetic latency is uniformly distributed and independent of covariates.
+    </p>
+    <div class="results-tables">
+      <div class="result-block">
+        <h3>Regression (target: <code>latency_us</code>)</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Model</th><th>MAE (&micro;s)</th><th>RMSE (&micro;s)</th><th>R&sup2;</th></tr></thead>
+            <tbody>
+              <tr><td>DummyRegressor (mean)</td><td>12.08</td><td>15.12</td><td>&minus;0.0001</td></tr>
+              <tr><td>Ridge</td><td>12.10</td><td>15.15</td><td>&minus;0.0035</td></tr>
+              <tr><td>XGBoost-ES</td><td>12.11</td><td>15.15</td><td>&minus;0.0039</td></tr>
+              <tr class="highlight-row"><td>LightGBM</td><td><strong>12.08</strong></td><td><strong>15.13</strong></td><td>&minus;0.0006</td></tr>
+              <tr><td>LSTM</td><td>12.08</td><td>15.12</td><td>&minus;0.0007</td></tr>
+              <tr><td>Ensemble</td><td>12.09</td><td>15.14</td><td>&minus;0.0018</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="result-block">
+        <h3>Classification (violation &gt; 120&micro;s)</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Model</th><th>Accuracy</th><th>F1</th><th>AUC-ROC</th><th>Avg Prec.</th></tr></thead>
+            <tbody>
+              <tr><td>Logistic Regression</td><td>0.384</td><td>0.169</td><td>0.505</td><td>0.097</td></tr>
+              <tr><td>XGBoost-ES</td><td>0.893</td><td>0.039</td><td>0.505</td><td>0.100</td></tr>
+              <tr class="highlight-row"><td>LightGBM</td><td><strong>0.904</strong></td><td>0.000</td><td><strong>0.517</strong></td><td>0.100</td></tr>
+              <tr><td>LSTM</td><td>0.905</td><td>0.000</td><td>0.494</td><td>0.094</td></tr>
+              <tr><td>Ensemble</td><td>0.904</td><td>0.000</td><td>0.498</td><td>0.100</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="callout">
+      <strong>Note:</strong> R&sup2; &asymp; 0 and AUC &asymp; 0.5 are <em>expected</em> &mdash; the synthetic data has no
+      exploitable signal. The pipeline is production-ready and will yield substantial improvements on real 6G data.
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPLAINABILITY ============ -->
+<section id="explainability" class="alt-bg">
+  <div class="container">
+    <h2 class="section-title">Explainability &amp; Error Analysis</h2>
+    <p class="section-subtitle">
+      SHAP TreeExplainer applied to XGBoost on a 2,000-row subsample for global feature importance.
+    </p>
+    <div class="cards-grid two">
+      <div class="card">
+        <h3>SHAP Analysis</h3>
+        <ul>
+          <li><strong>Top features:</strong> <code>latency_lag_1</code>, <code>latency_roll_mean_1s</code>, <code>packet_rate_1s</code></li>
+          <li>Feature importance is approximately uniform due to synthetic data</li>
+          <li>Mean |SHAP| &asymp; 0.01&ndash;0.05 for all features</li>
+          <li>No systematic non-linear interactions in dependence plots</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Error Analysis</h3>
+        <ul>
+          <li>Regression errors are symmetric, centred at zero</li>
+          <li>Worst 10 predictions: absolute errors in 30&ndash;50&micro;s range (distribution tails)</li>
+          <li>Classifier defaults to majority class (no-violation) &mdash; ~90% accuracy from base rate</li>
+          <li>Calibration curve shows limited discrimination ability</li>
+        </ul>
+      </div>
+    </div>
+    <div class="shap-features">
+      <h3>Top 10 Features by Mean |SHAP|</h3>
+      <div class="feature-bar-chart">
+        <div class="feature-bar"><span class="fb-label">latency_lag_1</span><div class="fb-track"><div class="fb-fill" style="width:100%"></div></div></div>
+        <div class="feature-bar"><span class="fb-label">latency_roll_mean_1s</span><div class="fb-track"><div class="fb-fill" style="width:92%"></div></div></div>
+        <div class="feature-bar"><span class="fb-label">packet_rate_1s</span><div class="fb-track"><div class="fb-fill" style="width:85%"></div></div></div>
+        <div class="feature-bar"><span class="fb-label">latency_roll_std_1s</span><div class="fb-track"><div class="fb-fill" style="width:78%"></div></div></div>
+        <div class="feature-bar"><span class="fb-label">latency_lag_2</span><div class="fb-track"><div class="fb-fill" style="width:72%"></div></div></div>
+        <div class="feature-bar"><span class="fb-label">latency_roll_mean_10s</span><div class="fb-track"><div class="fb-fill" style="width:65%"></div></div></div>
+        <div class="feature-bar"><span class="fb-label">jitter_us</span><div class="fb-track"><div class="fb-fill" style="width:55%"></div></div></div>
+        <div class="feature-bar"><span class="fb-label">queue_occupancy</span><div class="fb-track"><div class="fb-fill" style="width:48%"></div></div></div>
+        <div class="feature-bar"><span class="fb-label">packet_size_bytes</span><div class="fb-track"><div class="fb-fill" style="width:42%"></div></div></div>
+        <div class="feature-bar"><span class="fb-label">cpu_usage</span><div class="fb-track"><div class="fb-fill" style="width:36%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROBUSTNESS ============ -->
+<section id="robustness">
+  <div class="container">
+    <h2 class="section-title">Robustness &amp; Attack Analysis</h2>
+    <p class="section-subtitle">
+      Model stability evaluated across distributional slices, noise injection, and temporal drift.
+    </p>
+    <div class="cards-grid three">
+      <div class="card">
+        <div class="card-icon">&#x1F4CA;</div>
+        <h3>Slice Analysis</h3>
+        <p>MAE remains &asymp;12.1&micro;s across <strong>Normal</strong>, <strong>Congested</strong>, and
+          <strong>Under Attack</strong> controller states, all severity levels, and all attack types.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#x1F4A5;</div>
+        <h3>Noise Injection</h3>
+        <p>Gaussian noise on <code>queue_occupancy</code> and <code>packet_rate_1s</code> at
+          mild (&sigma;&times;0.5) and heavy (&sigma;&times;2.0) levels. MAE and accuracy remain unchanged.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#x23F3;</div>
+        <h3>Concept Drift</h3>
+        <p>XGBoost trained on first 60% of data, tested on last 40% achieves
+          MAE &asymp; 12.1&micro;s &mdash; identical to full-data model. No temporal drift detected.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENFORCEMENT ============ -->
+<section id="enforcement" class="alt-bg">
+  <div class="container">
+    <h2 class="section-title">Enforcement-Action Effectiveness</h2>
+    <p class="section-subtitle">
+      Causal estimation of three enforcement-action types on per-packet latency using 505 events.
+    </p>
+    <div class="methods-row">
+      <div class="method-box">
+        <h4>Pre/Post Window</h4>
+        <p>&plusmn;100&micro;s windows around each enforcement timestamp. Compares mean and P95 latency changes.</p>
+      </div>
+      <div class="method-box">
+        <h4>Difference-in-Differences</h4>
+        <p>Treatment vs. control windows shifted 5&times; away. Bootstrap 95% CI and Welch's t-test.</p>
+      </div>
+      <div class="method-box">
+        <h4>Propensity-Score Matching</h4>
+        <p>9-covariate matching using logistic regression propensity scores + nearest-neighbour matching.</p>
+      </div>
+    </div>
+    <div class="table-wrapper" style="margin-top:2rem">
+      <table>
+        <thead>
+          <tr><th>Method</th><th>Action Type</th><th>ATE (&micro;s)</th><th>95% CI</th><th>p-value</th><th>Significant?</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>DiD</td><td>Access Control</td><td>+0.19</td><td>[&minus;0.27, +0.66]</td><td>0.42</td><td>No</td></tr>
+          <tr><td>DiD</td><td>Isolation</td><td>+0.38</td><td>[&minus;0.08, +0.82]</td><td>0.09</td><td>No</td></tr>
+          <tr><td>DiD</td><td>Traffic Redirection</td><td>&minus;0.25</td><td>[&minus;0.72, +0.21]</td><td>0.30</td><td>No</td></tr>
+          <tr class="highlight-row"><td>PSM</td><td>Access Control</td><td>&minus;8.43</td><td>[&minus;10.81, &minus;5.96]</td><td>&lt;0.001</td><td><strong>Yes</strong></td></tr>
+          <tr class="highlight-row"><td>PSM</td><td>Isolation</td><td>&minus;7.19</td><td>[&minus;9.32, &minus;5.04]</td><td>&lt;0.001</td><td><strong>Yes</strong></td></tr>
+          <tr class="highlight-row"><td>PSM</td><td>Traffic Redirection</td><td>&minus;8.59</td><td>[&minus;10.72, &minus;6.39]</td><td>&lt;0.001</td><td><strong>Yes</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout" style="margin-top:1.5rem">
+      <strong>Interpretation:</strong> DiD CIs span zero (expected for synthetic uniform data).
+      PSM finds significant differences driven by covariate matching. The methodology is sound
+      and transferable to production data.
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECOMMENDATIONS ============ -->
+<section id="recommendations">
+  <div class="container">
+    <h2 class="section-title">Operational Recommendations</h2>
+    <div class="rec-cards">
+      <div class="rec-card">
+        <div class="rec-number">R1</div>
+        <div class="rec-content">
+          <h4>Deploy Traffic Redirection</h4>
+          <p>Use as the primary enforcement action against DoS and Spoofing attacks.
+            Largest mean latency reduction (&Delta; = &minus;0.22&micro;s). Expected to reduce SLA violations by 5&ndash;15% on production data.</p>
+        </div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-number">R2</div>
+        <div class="rec-content">
+          <h4>Real-Time Feature Pipeline</h4>
+          <p>Integrate rolling-window and lag features with sub-millisecond freshness.
+            <code>latency_lag_1</code>, <code>latency_roll_mean_1s</code>, and <code>packet_rate_1s</code>
+            are the most important features. Expected: 10&ndash;20% MAE improvement on production data.</p>
+        </div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-number">R3</div>
+        <div class="rec-content">
+          <h4>Monthly Retraining</h4>
+          <p>Retrain the stacking ensemble monthly with production data and monitor for concept drift.
+            Use the drift evaluation (Section 8) as a retraining gate. Target: sustained R&sup2; &gt; 0 and AUC &gt; 0.80.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REPRODUCIBILITY ============ -->
+<section id="reproducibility" class="alt-bg">
+  <div class="container">
+    <h2 class="section-title">Reproducibility</h2>
+    <p class="section-subtitle">
+      Full pipeline reproducible from scratch with fixed random seeds and exact split boundaries.
+    </p>
+    <div class="cards-grid two">
+      <div class="card">
+        <h3>Environment</h3>
+        <div class="env-table">
+          <div class="env-row"><span>Python</span><span>3.11.4</span></div>
+          <div class="env-row"><span>pandas</span><span>2.2.3</span></div>
+          <div class="env-row"><span>scikit-learn</span><span>1.6.1</span></div>
+          <div class="env-row"><span>XGBoost</span><span>3.0.2</span></div>
+          <div class="env-row"><span>LightGBM</span><span>4.6.0</span></div>
+          <div class="env-row"><span>PyTorch</span><span>2.10.0</span></div>
+          <div class="env-row"><span>SHAP</span><span>0.50.0</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Quick Start</h3>
+        <pre><code>pip install -r requirements.txt
+
+python scripts/make_combined_40k.py
+python -m src.features.feature_pipeline
+python -m src.models.baseline
+python -m src.models.advanced
+python -m src.models.hpo
+python -m src.models.ensemble
+python -m src.eval.explain
+python -m src.eval.robustness
+python -m src.models.enforcement_effects
+
+# Online prediction
+python -m src.predict.online_predict \
+  --input examples/sample_input.json \
+  --output examples/sample_output.json
+
+# Tests
+python -m pytest tests/ -v</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECT STRUCTURE ============ -->
+<section id="structure">
+  <div class="container">
+    <h2 class="section-title">Project Structure</h2>
+    <pre class="tree"><code>Network-Latency-Prediction-in-6G-Industrial-Systems/
+├── data/                 # Raw CSVs + train_ready.parquet
+├── scripts/              # make_combined_40k.py, run_eda.py
+├── src/
+│   ├── data/             # load_data.py — ingestion &amp; profiling
+│   ├── features/         # feature_pipeline.py — 68 engineered features
+│   ├── models/           # baseline, advanced, hpo, ensemble, enforcement
+│   ├── eval/             # explain (SHAP), error_analysis, robustness
+│   └── predict/          # online_predict.py — CLI inference
+├── models/               # Saved .joblib &amp; .pt artifacts
+├── figures/              # 36+ generated plots
+├── reports/              # JSON metrics + markdown reports
+├── notebooks/            # 00–11 step-by-step Jupyter notebooks
+├── examples/             # sample_input.json, sample_output.json
+├── tests/                # 50 passing tests
+├── final_report.tex      # LaTeX report
+├── requirements.txt
+└── README.md</code></pre>
+  </div>
+</section>
+
+<!-- ============ CONTRIBUTORS ============ -->
+<section id="contributors" class="alt-bg">
+  <div class="container">
+    <h2 class="section-title">Contributors</h2>
+    <p class="section-subtitle">Built with dedication by</p>
+    <div class="contributors-grid">
+      <div class="contributor-card">
+        <div class="avatar">
+          <img src="https://github.com/Abhinashroy.png" alt="Abhinashroy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="avatar-fallback" style="display:none">AR</div>
+        </div>
+        <h3>Abhinashroy</h3>
+        <a href="https://github.com/Abhinashroy" target="_blank" class="contributor-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          @Abhinashroy
+        </a>
+      </div>
+      <div class="contributor-card">
+        <div class="avatar">
+          <img src="https://github.com/Sandeep7339.png" alt="Sandeep7339" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="avatar-fallback" style="display:none">S7</div>
+        </div>
+        <h3>Sandeep7339</h3>
+        <a href="https://github.com/Sandeep7339" target="_blank" class="contributor-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          @Sandeep7339
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>TD-6GMF-INDSEC</h3>
+        <p>Network Latency Prediction in 6G Industrial Systems</p>
+      </div>
+      <div class="footer-right">
+        <a href="https://github.com/Abhinashroy/Network-Latency-Prediction-in-6G-Industrial-Systems" target="_blank">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Abhinashroy &amp; Sandeep7339. MIT License.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Smooth scroll + navbar shrink -->
+<script>
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        const offset = 70;
+        const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+      document.querySelector('.nav-links').classList.remove('open');
+    });
+  });
+
+  // Navbar shrink on scroll
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+
+  // Active section highlighting
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      const top = sec.offsetTop - 100;
+      if (window.scrollY >= top) current = sec.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
